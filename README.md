@@ -1,62 +1,130 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# CRUD Laravel 9 + Vue 2 + SQLite
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+[![Laravel](https://img.shields.io/badge/Laravel-9.x-red.svg)](https://laravel.com)
+[![Vue.js](https://img.shields.io/badge/Vue.js-2.x-green.svg)](https://vuejs.org)
+[![PHP](https://img.shields.io/badge/PHP-7.4.16%2B-blue.svg)](https://php.net)
+[![SQLite](https://img.shields.io/badge/SQLite-lightgrey.svg)](https://sqlite.org)
 
-## About Laravel
+Sistema CRUD completo com **Laravel 9 (API RESTful)** no backend e **Vue 2 + Vue Router + Axios** no frontend, usando **SQLite** como banco de dados.  
+Projeto ideal como base/boilerplate para novos sistemas full-stack com Laravel + Vue.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Funcionalidades
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- CRUD completo de itens (Create, Read, Update, Delete)
+- API RESTful protegida por validação
+- Frontend SPA com Vue 2 + Bootstrap 4
+- Banco de dados SQLite (zero configuração)
+- Migrações e seeders prontos
+- Validação de formulários no backend (Form Requests)
+- Mensagens de feedback com Toast (sweetalert2)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Pré-requisitos
 
-## Learning Laravel
+- PHP >= 7.4.16 (testado até 8.3)
+- Composer
+- Node.js + NPM
+- Git
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Instalação Rápida (menos de 5 minutos)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```bash
+# 1. Clone o repositório
+git clone https://github.com/fernandoRodrigues29/crud_laravel_vue_sqlite.git
+cd crud_laravel_vue_sqlite
 
-## Laravel Sponsors
+# 2. Instale as dependências do PHP
+composer install
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+# 3. Copie o arquivo de ambiente
+cp .env.example .env
 
-### Premium Partners
+# 4. Crie o banco SQLite (arquivo será criado automaticamente)
+touch database/database.sqlite
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+# 5. Rode as migrations + seeders (cria tabela + dados de exemplo)
+php artisan migrate --seed
 
-## Contributing
+# 6. Instale as dependências do frontend
+npm install
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# 7. Compile os assets
+npm run dev
+# ou npm run watch (durante desenvolvimento)
 
-## Code of Conduct
+# 8. Inicie o servidor
+php artisan serve
+Acesse: http://localhost:8000
+Estrutura de Pastas Principal
+textapp/
+├── Http/Controllers/Api/ItemController.php     → API REST
+├── Models/Item.php                            → Eloquent Model
+resources/
+├── js/
+│   ├── app.js                                 → Bootstrap Vue
+│   ├── components/                            → Componentes Vue
+│   └── router/index.js                        → Vue Router
+database/
+├── migrations/                                → Tabela items
+├── seeders/ItemSeeder.php                     → Dados de exemplo
+routes/
+├── api.php                                    → Rotas da API
+└── web.php                                    → Rotas do frontend Vue
+Endpoints da API
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# crud_laravel_vue_sqlite
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MétodoURLDescriçãoGET/api/itemsLista todos os itensGET/api/items/{id}Mostra um itemPOST/api/itemsCria novo itemPUT/api/items/{id}Atualiza itemDELETE/api/items/{id}Remove item
+Tecnologias Utilizadas
+
+Laravel 9.x
+Vue.js 2.6 + Vue Router
+Axios
+Bootstrap 4 + Bootswatch (tema Cyborg)
+SweetAlert2 (toasts)
+Laravel Mix (webpack)
+SQLite (banco em arquivo único)
+
+Comandos Úteis
+Bash# Limpar cache (caso precise)
+php artisan config:clear
+php artisan route:clear
+php artisan view:clear
+php artisan cache:clear
+
+# Reconstruir assets em produção
+npm run production
+
+# Rodar testes (se adicionar)
+php artisan test
